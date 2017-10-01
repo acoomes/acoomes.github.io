@@ -18,9 +18,9 @@ author:
 
 # Social details for the jekyll-seo-tag gem
 social:
-  name: Strata Reloaded Template
+  name: Andrew Coomes' Website
   links:
-    - https://github.com/comfusion/strata-reloaded-jekyll-template
+    - https://github.com/acoomes/acoomes.github.io
 
 permalink: pretty
 
