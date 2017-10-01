@@ -1,21 +1,52 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+locale: "en-US"
+title: A Coomes Blog # Title of your site
+url: "http://acoomes.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+google_analytics_key: ""
 
-# Site settings
-title: A Coomes' Blog
-email: 86drift@gmail.com
+# Default description in social shares for the jekyll-seo-tag gem
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://acoomes.com" # the base hostname & protocol for your site
-twitter_username: andrewcoomes
-github_username:  acoomes
 
-# Build settings
-markdown: kramdown
+# Author details for the jekyll-seo-tag gem
+author:
+  name: Andrew Coomes
+  email: 86drift@gmail.com
+  twitter: andrewcoomes # twitter username without the @ symbol
+
+# Social details for the jekyll-seo-tag gem
+social:
+  name: Andrew Coomes' Website
+  links:
+    - https://github.com/acoomes/acoomes.github.io
+
+permalink: pretty
+
+gems:
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-paginate"
+  - "jekyll-sitemap"
+
+# Jekyll SEO Tag
+webmaster_verifications:
+  google: # 1234
+  bing: # 1234
+  alexa: # 1234
+  yandex: # 1234
+
+# -----------
+# CloudCannon
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS
