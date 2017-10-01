@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "return posts[1]"
+title:  "return posts[1];"
 date:   2017-09-30
 categories: update
 ---
