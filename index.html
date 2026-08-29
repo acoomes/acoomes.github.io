@@ -1,38 +1,67 @@
----
-layout: default
----
-<div id="main">
-  <section>
-    {% for post in site.posts limit:1 %}
-      <header>
-        <h1>{{ post.title }}</h1>
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-      </header>
-      <section>
-        {{ post.content }}
-        <p class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></p>
-      </section>
-    {% endfor %}
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrew Coomes</title>
+  <meta name="description" content="Product and software. Portland.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="siteicon.png">
+  <link rel="apple-touch-icon" href="touch-icon.png">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Andrew Coomes</h1>
+      <p class="lede">Product and software. Portland.</p>
+      <p>Former Formula Drift driver. Builds products and the tools around them.</p>
+    </header>
 
-  <section>
-    <div class="row">
-      {% for post in site.posts offset:1 %}
-        <article class="{% cycle '6u', '6u$' %} 12u(small)">
-          <header>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          </header>
-          <section>
-            {{ post.excerpt }}
-          </section>
-          <footer>
-            <ul class="actions">
-              <li><a href="{{ post.url }}" class="button">Read More</a></li>
-              <li class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></li>
-            </ul>
-          </footer>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-</div>
+    <section>
+      <h2>Now</h2>
+      <p>Agile Product Manager and Engagement Lead at D8TAOPS.</p>
+      <p>Practical AI and data ops for teams that need the work in production. (Public: Kitsap Credit Union / D8TAOPS production audit platform go-live.)</p>
+    </section>
+
+    <section>
+      <h2>Selected work</h2>
+      <ul>
+        <li>D8TAOPS — Agile Product Manager and Engagement Lead</li>
+        <li>Phoenix Technologies (FirmGuard) — Principal Product Owner</li>
+        <li>Columbia Sportswear — Digital Product Owner / Senior Technical Product Manager</li>
+        <li>Nike — Technical Product Manager; earlier Business Systems Analyst</li>
+        <li>Oregon Institute of Technology — Tech Specialist; founded and directed the esports program</li>
+        <li>Catalyte — Software Developer, then PM</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Building</h2>
+      <ul>
+        <li><a href="https://latch-bice.vercel.app">Latch</a> — Client-ready one-page offer pages.</li>
+        <li><a href="https://morning-download.com">Morning Download</a> — Daily news and AI briefing. <a href="https://github.com/acoomes/morning-download" class="repo-link">GitHub</a></li>
+        <li><a href="https://decisionmakerr.com">Decisionmakerr</a> — Dice for when you can't pick. <a href="https://github.com/acoomes/com.decisionmakerr" class="repo-link">GitHub</a></li>
+        <li><a href="https://github.com/acoomes/agent-infrastructure">Agent Infrastructure</a> — Shared memory, API marketplace with x402, bounded delegation.</li>
+        <li><a href="https://github.com/acoomes/dumbtrader">Dumbtrader</a> — Futures bot. YAML and Pine Script strategies.</li>
+        <li><a href="https://github.com/acoomes/dicevzombz">DiceVZombz</a> — Dice-rolling zombie survival in vanilla JS.</li>
+      </ul>
+      <p class="studio">Work ships under <a href="https://86drift.com">86 Drift</a>.</p>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <p>Andrew lives in Portland. He drove in Formula Drift (professional license, 2012), then moved into software at Catalyte and into product at Nike, Columbia, Phoenix, and D8TAOPS. Certified Scrum Master and Certified Scrum Product Owner.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>Email: <a href="mailto:86drift@gmail.com">86drift@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/andrewcoomes">andrewcoomes</a></li>
+        <li>GitHub: <a href="https://github.com/acoomes">acoomes</a></li>
+        <li>Twitter: <a href="https://twitter.com/andrewcoomes">andrewcoomes</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
