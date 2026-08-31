@@ -8,6 +8,32 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="siteicon.png">
   <link rel="apple-touch-icon" href="touch-icon.png">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'system';
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      function applyTheme() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'system') {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+        } else {
+          document.documentElement.style.colorScheme = theme;
+        }
+      }
+      
+      applyTheme();
+      
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+          if (document.documentElement.getAttribute('data-theme') === 'system') {
+            applyTheme();
+          }
+        });
+      }
+    })();
+  </script>
 </head>
 <body>
   <main>
@@ -15,6 +41,13 @@
       <h1>Andrew Coomes</h1>
       <p class="lede">Product and software. Portland.</p>
       <p>Builds products and the tools around them.</p>
+      <div class="theme-switcher" role="radiogroup" aria-label="Theme selection">
+        <button type="button" role="radio" aria-checked="false" data-theme="light">Light</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" role="radio" aria-checked="false" data-theme="dark">Dark</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" role="radio" aria-checked="true" data-theme="system">System</button>
+      </div>
     </header>
 
     <section>
@@ -61,5 +94,38 @@
       </ul>
     </section>
   </main>
+  <script>
+    (function() {
+      const buttons = document.querySelectorAll('.theme-switcher button');
+      const savedTheme = localStorage.getItem('theme') || 'system';
+      
+      function updateButtons(theme) {
+        buttons.forEach(btn => {
+          btn.setAttribute('aria-checked', btn.dataset.theme === theme ? 'true' : 'false');
+        });
+      }
+      
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateButtons(theme);
+        
+        if (theme === 'system') {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+        } else {
+          document.documentElement.style.colorScheme = theme;
+        }
+      }
+      
+      updateButtons(savedTheme);
+      
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTheme(btn.dataset.theme);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
