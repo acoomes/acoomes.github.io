@@ -134,6 +134,16 @@ a:hover {
   color: var(--text);
 }
 
+.org {
+  display: block;
+  font-weight: 500;
+}
+
+.role {
+  display: block;
+  color: var(--text-light);
+}
+
 @media (max-width: 640px) {
   main {
     padding: 48px 20px 80px;
