@@ -13,6 +13,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Andrew Coomes">
   <meta name="twitter:description" content="Product and software. Portland.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://andrewcoomes.com/">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="siteicon.png">
@@ -106,15 +108,14 @@
       <p>I live in Portland. I'm a Certified Scrum Master and Certified Scrum Product Owner, and I held a Formula Drift license.</p>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <ul class="contact">
-        <li><a href="mailto:86drift@gmail.com">86drift@gmail.com</a></li>
-        <li><a href="https://www.linkedin.com/in/andrewcoomes">LinkedIn</a></li>
-        <li><a href="https://github.com/acoomes">GitHub</a></li>
-      </ul>
-    </section>
-
+  </main>
+  
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:86drift@gmail.com">86drift@gmail.com</a>
+      <a href="https://www.linkedin.com/in/andrewcoomes">LinkedIn</a>
+      <a href="https://github.com/acoomes">GitHub</a>
+    </div>
     <div class="theme-switcher" role="radiogroup" aria-label="Theme selection">
       <button type="button" role="radio" aria-checked="false" data-theme="light">Light</button>
       <span aria-hidden="true">/</span>
@@ -122,7 +123,7 @@
       <span aria-hidden="true">/</span>
       <button type="button" role="radio" aria-checked="true" data-theme="system">System</button>
     </div>
-  </main>
+  </footer>
   <script>
     (function() {
       const buttons = document.querySelectorAll('.theme-switcher button');
