@@ -46,7 +46,7 @@ body {
 main {
   max-width: 680px;
   margin: 0 auto;
-  padding: 80px 24px 120px;
+  padding: 80px 24px 0;
 }
 
 h1 {
@@ -175,7 +175,7 @@ a:focus-visible {
 
 @media (max-width: 640px) {
   main {
-    padding: 48px 20px 80px;
+    padding: 48px 20px 0;
   }
 
   h1 {
