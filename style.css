@@ -71,6 +71,14 @@ header h2 {
   margin-top: 0;
 }
 
+section:first-of-type h2 {
+  margin-top: 56px;
+}
+
+section + section h2 {
+  margin-top: 0;
+}
+
 p {
   margin-bottom: 16px;
 }
@@ -86,7 +94,7 @@ header > p:last-child {
 }
 
 section {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   padding-top: 48px;
   border-top: 1px solid var(--border);
 }
