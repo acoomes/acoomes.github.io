@@ -126,6 +126,15 @@ section ul li {
   font-weight: 500;
 }
 
+#building .org {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+#building ul li {
+  margin-bottom: 24px;
+}
+
 .role {
   display: block;
   color: var(--text-light);
