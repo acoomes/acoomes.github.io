@@ -1,157 +1,472 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrew Coomes</title>
-  <meta name="description" content="Product and software. Portland.">
-  <meta property="og:title" content="Andrew Coomes">
-  <meta property="og:description" content="Product and software. Portland.">
-  <meta property="og:url" content="https://andrewcoomes.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://andrewcoomes.com/siteicon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Andrew Coomes">
-  <meta name="twitter:description" content="Product and software. Portland.">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://andrewcoomes.com/">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="siteicon.png">
-  <link rel="apple-touch-icon" href="touch-icon.png">
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'system';
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      function applyTheme() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-        
-        if (theme === 'system') {
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
-          if (themeColorMeta) {
-            themeColorMeta.content = prefersDark ? '#0a0a0a' : '#ffffff';
-          }
-        } else {
-          document.documentElement.style.colorScheme = theme;
-          if (themeColorMeta) {
-            themeColorMeta.content = theme === 'dark' ? '#0a0a0a' : '#ffffff';
-          }
-        }
-      }
-      
-      applyTheme();
-      
-      if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-          if (document.documentElement.getAttribute('data-theme') === 'system') {
-            applyTheme();
-          }
-        });
-      }
-    })();
-  </script>
-</head>
-<body>
-  <main>
-    <header>
-      <h1>Andrew Coomes</h1>
-      <p class="lede">I'm an Agile Product Manager and Engagement Lead at <a href="https://d8taops.com">D8TAOPS</a>.</p>
-      <p>I work on agentic AI that runs in production, inside the systems teams already use.</p>
-    </header>
-
-    <section id="building">
-      <h2>Building</h2>
-      <ul>
-        <li>
-          <span class="org"><a href="https://morning-download.com">Morning Download</a> <a href="https://github.com/acoomes/morning-download" class="repo-link">GitHub</a></span>
-          <span class="role">Daily news and AI briefing.</span>
-        </li>
-        <li>
-          <span class="org"><a href="https://decisionmakerr.com">Decisionmakerr</a> <a href="https://github.com/acoomes/com.decisionmakerr" class="repo-link">GitHub</a></span>
-          <span class="role">Dice for when you can't pick.</span>
-        </li>
-        <li>
-          <span class="org"><a href="https://paper-86.vercel.app">Paper 86</a> <a href="https://github.com/acoomes/paper-86" class="repo-link">GitHub</a></span>
-          <span class="role">60-second paper drift.</span>
-        </li>
-      </ul>
-      <p class="studio">I ship work under <a href="https://86drift.com">86 Drift</a>.</p>
-    </section>
-
-    <section>
-      <h2>Selected work</h2>
-      <ul>
-        <li><span class="org">Phoenix Technologies (FirmGuard)</span><span class="role">Principal Product Owner</span></li>
-        <li><span class="org">Columbia Sportswear</span><span class="role">Digital Product Owner / Senior Technical Product Manager</span></li>
-        <li><span class="org">Nike</span><span class="role">Technical Product Manager; earlier Business Systems Analyst</span></li>
-        <li><span class="org">Oregon Institute of Technology</span><span class="role">Tech Specialist; founded and directed the esports program</span></li>
-        <li><span class="org">Catalyte</span><span class="role">Software Developer, then PM</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>About</h2>
-      <p>I live in Portland. I'm a Certified Scrum Master and Certified Scrum Product Owner, and I held a Formula Drift license.</p>
-    </section>
-
-  </main>
-  
-  <footer>
-    <div class="footer-links">
-      <a href="mailto:86drift@gmail.com">86drift@gmail.com</a>
-      <a href="https://www.linkedin.com/in/andrewcoomes">LinkedIn</a>
-      <a href="https://github.com/acoomes">GitHub</a>
-    </div>
-    <div class="theme-switcher" role="radiogroup" aria-label="Theme selection">
-      <button type="button" role="radio" aria-checked="false" data-theme="light">Light</button>
-      <span aria-hidden="true">/</span>
-      <button type="button" role="radio" aria-checked="false" data-theme="dark">Dark</button>
-      <span aria-hidden="true">/</span>
-      <button type="button" role="radio" aria-checked="true" data-theme="system">System</button>
-    </div>
-  </footer>
-  <script>
-    (function() {
-      const buttons = document.querySelectorAll('.theme-switcher button');
-      const savedTheme = localStorage.getItem('theme') || 'system';
-      
-      function updateButtons(theme) {
-        buttons.forEach(btn => {
-          btn.setAttribute('aria-checked', btn.dataset.theme === theme ? 'true' : 'false');
-        });
-      }
-      
-      function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        updateButtons(theme);
-        
-        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-        
-        if (theme === 'system') {
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
-          if (themeColorMeta) {
-            themeColorMeta.content = prefersDark ? '#0a0a0a' : '#ffffff';
-          }
-        } else {
-          document.documentElement.style.colorScheme = theme;
-          if (themeColorMeta) {
-            themeColorMeta.content = theme === 'dark' ? '#0a0a0a' : '#ffffff';
-          }
-        }
-      }
-      
-      updateButtons(savedTheme);
-      
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          setTheme(btn.dataset.theme);
-        });
-      });
-    })();
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Andrew Coomes — Product leader. Hands-on builder.</title>
+    <meta
+      name="description"
+      content="I make things move forward. Andrew Coomes: product leadership, production agentic AI, and independently shipped software. Based in Portland, Oregon."
+    />
+    <meta name="theme-color" content="#f3f1eb" />
+    <meta
+      property="og:title"
+      content="Andrew Coomes — I make things move forward."
+    />
+    <meta
+      property="og:description"
+      content="Product leader. Hands-on builder. Explore the work, experience, and restless curiosity."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andrewcoomes.com/" />
+    <meta
+      property="og:image"
+      content="https://andrewcoomes.com/assets/newspaper.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://andrewcoomes.com/" />
+    <link rel="icon" href="siteicon.png" />
+    <link rel="apple-touch-icon" href="touch-icon.png" />
+    <link
+      rel="preload"
+      href="assets/fonts/dm-sans-900.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js?v=20260918" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <aside class="rail">
+      <a href="#work" class="monogram" aria-label="Andrew Coomes, home">AC</a>
+      <nav aria-label="Main navigation">
+        <a href="#work" class="active" aria-current="location">Work</a
+        ><a href="#experience">Experience</a><a href="#about">About</a
+        ><a href="#contact">Contact</a>
+      </nav>
+      <div class="rail-note">
+        <span>Portland, OR</span><span>Built for<br />what’s next.</span>
+      </div>
+    </aside>
+    <main id="main">
+      <section class="work" id="work" aria-labelledby="hero-title">
+        <img
+          class="desk-corner"
+          src="assets/desk-corner.jpg"
+          alt=""
+          width="1024"
+          height="1024"
+          aria-hidden="true"
+        />
+        <header class="hero">
+          <div class="hero-copy">
+            <h1 id="hero-title">
+              I make things<br />move forward<span>.</span>
+            </h1>
+            <p class="introduction">
+              Andrew Coomes. Product leader. Hands-on builder.
+            </p>
+          </div>
+          <div class="now">
+            <span class="eyebrow">Now</span
+            ><a
+              href="https://d8taops.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >D8TAOPS<img
+                class="icon"
+                src="assets/icons/arrow-up-right.svg"
+                alt=""
+            /></a>
+            <p>Production agentic AI</p>
+            <p class="now-detail">
+              I work on agentic AI that runs in production, inside the systems
+              teams already use.
+            </p>
+          </div>
+        </header>
+        <div class="workbench" id="projects">
+          <p class="workbench-intro">
+            A few things I’ve shipped. <span>Pick one to explore.</span>
+          </p>
+          <div class="projects">
+            <a
+              class="project newspaper"
+              href="https://morning-download.com"
+              data-project="morning"
+              aria-haspopup="dialog"
+              ><div class="project-art">
+                <img
+                  src="assets/newspaper.jpg"
+                  alt="A folded Morning Download newspaper, illustrated with Portland and Mount Hood"
+                  width="1400"
+                  height="933"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="project-caption">
+                <h2>
+                  Morning Download
+                  <img class="icon" src="assets/icons/arrow-right.svg" alt="" />
+                </h2>
+                <p>Daily news and AI briefing.</p>
+                <span class="project-hint">Open the project</span>
+              </div></a
+            >
+            <a
+              class="project dice"
+              href="https://decisionmakerr.com"
+              data-project="decision"
+              aria-haspopup="dialog"
+              ><div class="project-art">
+                <img
+                  src="assets/dice.jpg"
+                  alt="A glossy blue die: Good decisions move things forward"
+                  width="1400"
+                  height="933"
+                />
+              </div>
+              <div class="project-caption">
+                <h2>
+                  Decisionmakerr
+                  <img class="icon" src="assets/icons/arrow-right.svg" alt="" />
+                </h2>
+                <p>Dice for when you can’t pick.</p>
+                <span class="project-hint">Open the project</span>
+              </div></a
+            >
+            <a
+              class="project car"
+              href="https://paper-86.vercel.app"
+              data-project="paper"
+              aria-haspopup="dialog"
+              ><div class="project-art">
+                <img
+                  src="assets/paper-car.jpg"
+                  alt="A paper sports car on a sketched drift circuit"
+                  width="1400"
+                  height="933"
+                />
+              </div>
+              <div class="project-caption">
+                <h2>
+                  Paper 86
+                  <img class="icon" src="assets/icons/arrow-right.svg" alt="" />
+                </h2>
+                <p>60-second paper drift.</p>
+                <span class="project-hint">Open the project</span>
+              </div></a
+            >
+          </div>
+        </div>
+        <div class="hero-actions">
+          <div class="button-group">
+            <a
+              class="button primary"
+              href="https://morning-download.com"
+              data-project="morning"
+              aria-haspopup="dialog"
+              >Explore the work
+              <img class="icon" src="assets/icons/arrow-right.svg" alt="" /></a
+            ><a class="button secondary" href="#contact">Let’s talk</a>
+          </div>
+          <p class="margin-note">Same curiosity.<br />Further.</p>
+        </div>
+        <div class="experience-strip" aria-label="Selected experience">
+          <div class="section-kicker">
+            <span class="eyebrow">Experience</span
+            ><span>Different teams. A common thread.</span>
+          </div>
+          <div class="companies">
+            <a href="#experience"
+              ><div class="company-logo">
+                <img
+                  class="nike-logo"
+                  src="assets/brands/nike.svg"
+                  alt="Nike"
+                  width="66"
+                  height="36"
+                />
+              </div>
+              <p>
+                <strong>Nike</strong><span>Technical Product Manager</span>
+              </p></a
+            >
+            <a href="#experience"
+              ><div class="company-logo columbia-logo">
+                <img
+                  src="assets/brands/columbia.svg"
+                  alt=""
+                  width="35"
+                  height="35"
+                /><strong>Columbia<br />Sportswear</strong>
+              </div>
+              <p>
+                <span
+                  >Senior Technical Product Manager<br />Digital Product
+                  Owner</span
+                >
+              </p></a
+            >
+            <a href="#experience"
+              ><div class="company-logo">
+                <img
+                  class="phoenix-logo"
+                  src="assets/brands/phoenix.jpg"
+                  alt="Phoenix Technologies"
+                  width="140"
+                  height="60"
+                />
+              </div>
+              <p>
+                <span>FirmGuard<br />Principal Product Owner</span>
+              </p></a
+            >
+            <a href="#experience"
+              ><div class="company-logo company-name catalyte">Catalyte</div>
+              <p>
+                <span>Software Developer,<br />then Product Manager</span>
+              </p></a
+            >
+            <a href="#experience"
+              ><div class="company-logo company-name">
+                Oregon Tech<br />Esports
+              </div>
+              <p><span>Founder &amp; director</span></p></a
+            >
+            <a
+              href="https://86drift.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><div class="company-logo company-name">86 Drift</div>
+              <p><span>Independent work</span></p></a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        id="experience"
+        class="experience section"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-heading">
+          <span class="eyebrow">01 / The background</span>
+          <h2 id="experience-title">
+            Big-picture thinking.<br />In-the-details doing<span>.</span>
+          </h2>
+          <p>
+            From writing software to leading product. From global brands to my
+            own experiments. The common thread is turning complicated problems
+            into something people can use.
+          </p>
+        </div>
+        <div class="career">
+          <article class="career-row current">
+            <span class="career-index">Now</span>
+            <div>
+              <h3>D8TAOPS</h3>
+              <p>Agile Product Manager &amp; Engagement Lead</p>
+            </div>
+            <p class="career-note">
+              Agentic AI in production, inside the systems teams already use.
+            </p>
+            <a
+              href="https://d8taops.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit D8TAOPS"
+              ><img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+            /></a>
+          </article>
+          <article class="career-row">
+            <span class="career-index">01</span>
+            <div>
+              <h3>Phoenix Technologies</h3>
+              <p>Principal Product Owner</p>
+            </div>
+            <p class="career-note">FirmGuard</p>
+            <a
+              href="https://phoenixtech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Phoenix Technologies"
+              ><img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+            /></a>
+          </article>
+          <article class="career-row">
+            <span class="career-index">02</span>
+            <div>
+              <h3>Columbia Sportswear</h3>
+              <p>Digital Product Owner / Senior Technical Product Manager</p>
+            </div>
+          </article>
+          <article class="career-row">
+            <span class="career-index">03</span>
+            <div>
+              <h3>Nike</h3>
+              <p>Technical Product Manager</p>
+            </div>
+            <p class="career-note">Earlier: Business Systems Analyst</p>
+          </article>
+          <article class="career-row">
+            <span class="career-index">04</span>
+            <div>
+              <h3>Oregon Institute of Technology</h3>
+              <p>Tech Specialist</p>
+            </div>
+            <p class="career-note">Founded and directed the esports program.</p>
+          </article>
+          <article class="career-row">
+            <span class="career-index">05</span>
+            <div>
+              <h3>Catalyte</h3>
+              <p>Software Developer, then Product Manager</p>
+            </div>
+          </article>
+        </div>
+        <a
+          class="text-link"
+          href="https://www.linkedin.com/in/andrewcoomes"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Connect on LinkedIn
+          <img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+        /></a>
+      </section>
+      <section id="about" class="about section" aria-labelledby="about-title">
+        <div class="about-copy">
+          <span class="eyebrow">02 / Beyond the job title</span>
+          <h2 id="about-title">
+            Serious about the work.<br />Curious about everything<span>.</span>
+          </h2>
+          <p>
+            I’m Andrew, based in Portland. I work at the intersection of product
+            and software, and I keep building outside the day job.
+          </p>
+          <p>
+            Sometimes that means a daily briefing. Sometimes it means dice for a
+            tough decision. Sometimes it’s a paper car going sideways.
+          </p>
+          <p>
+            I’m a Certified Scrum Master and Certified Scrum Product Owner. I’ve
+            also held a Formula Drift license. The curiosity doesn’t stop at a
+            job description.
+          </p>
+          <a
+            class="text-link"
+            href="https://86drift.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >More from 86 Drift
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+          /></a>
+        </div>
+        <div class="about-art">
+          <img
+            src="assets/paper-car.jpg"
+            alt="A folded paper drift car"
+            loading="lazy"
+            width="1400"
+            height="933"
+          /><span class="eyebrow">Product. Software. A little sideways.</span>
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="contact section"
+        aria-labelledby="contact-title"
+      >
+        <span class="eyebrow">03 / The next conversation</span>
+        <h2 id="contact-title">
+          What are you<br />moving forward<span>?</span>
+        </h2>
+        <div class="contact-bottom">
+          <p>
+            Building a team, shaping a product, or figuring out what comes next?
+            I’d like to hear about it.
+          </p>
+          <a href="mailto:86drift@gmail.com" class="button primary"
+            >Let’s talk
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+          /></a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:86drift@gmail.com">86drift@gmail.com</a
+          ><button id="copy-email" type="button" hidden>Copy email</button
+          ><span id="copy-status" role="status" aria-live="polite"></span
+          ><a
+            href="https://www.linkedin.com/in/andrewcoomes"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt="" /></a
+          ><a
+            href="https://github.com/acoomes"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+          /></a>
+        </div>
+      </section>
+      <footer>
+        <span>Andrew Coomes / Portland, Oregon</span
+        ><a href="#work"
+          >Back to the work
+          <img class="icon" src="assets/icons/arrow-up-right.svg" alt="" /></a
+        ><span>Always a work in progress.</span>
+      </footer>
+    </main>
+    <dialog
+      id="project-dialog"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-description"
+    >
+      <button class="dialog-close" type="button" aria-label="Close project">
+        <img src="assets/icons/close.svg" width="24" height="24" alt="" />
+      </button>
+      <div class="dialog-visual">
+        <img
+          id="dialog-image"
+          src="assets/newspaper.jpg"
+          alt=""
+          width="1400"
+          height="933"
+        />
+      </div>
+      <div class="dialog-copy">
+        <span class="eyebrow" id="dialog-category"></span>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description"></p>
+        <div class="dialog-links">
+          <a
+            id="dialog-visit"
+            class="button primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit project
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt="" /></a
+          ><a
+            id="dialog-source"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View source
+            <img class="icon" src="assets/icons/arrow-up-right.svg" alt=""
+          /></a>
+        </div>
+        <p class="dialog-footnote">
+          An independent build from
+          <a
+            href="https://86drift.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >86 Drift</a
+          >.
+        </p>
+      </div>
+    </dialog>
+  </body>
 </html>
