@@ -109,7 +109,7 @@ if (navigator.clipboard && window.isSecureContext) {
   copyButton.addEventListener("click", async () => {
     const status = document.querySelector("#copy-status");
     try {
-      await navigator.clipboard.writeText("86drift@gmail.com");
+      await navigator.clipboard.writeText("andrewjcoomes@gmail.com");
       status.textContent = "Email copied.";
       copyButton.textContent = "Copied";
     } catch {
