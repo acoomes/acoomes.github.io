@@ -781,7 +781,8 @@ dialog::backdrop {
 }
 @media (min-width: 1700px) {
   main {
-    max-width: 1700px;
+    /* Keep content centered and readable without capping section backgrounds. */
+    --gutter: max(64px, calc((100vw - var(--rail) - 1572px) / 2));
   }
   .desk-corner {
     right: -80px;
