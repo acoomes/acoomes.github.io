@@ -24,7 +24,7 @@ const projects = {
     image: "assets/paper-car.jpg",
     description:
       "60-second paper drift. A little driving experiment that brings two of my interests together: building software and going sideways.",
-    url: "https://paper-86.vercel.app",
+    url: "https://paper86.app/",
     source: "https://github.com/acoomes/paper-86",
   },
 };
